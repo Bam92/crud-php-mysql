@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project list</title>
+    <title>Tasks list</title>
 </head>
 
 <body>
@@ -14,23 +14,23 @@
 
         $connection = new PDO($dsn, $username, $password, $options);
 
-        $sql =  'SELECT * FROM projects ORDER BY title';
+        $sql =  'SELECT * FROM tasks ORDER BY date_task';
 
         $statement = $connection->query($sql);
         // $result = $statement->fetchAll();
 
-        $projectCount = $statement->rowCount();
+        $taskCount = $statement->rowCount();
     } catch (PDOException $err) {
         echo $sql . "<br>" . $err->getMessage();
     }
     ?>
     <div>
-        <h1>Project list (<?php echo $projectCount ?>)</h1>
+        <h1>Tasks list (<?php echo $taskCount ?>)</h1>
         <!-- If there's not yet data -->
         <?php
-        if ($projectCount <= 0) {
-            echo "<p>You have not yet added any project </p>";
-            echo "<p><a href='#'>Add project</a></p>";
+        if ( $taskCount == 0 ) {
+            echo "<p>You have not yet added any task </p>";
+            echo "<p><a href='#'>Add task</a></p>";
         }
 
         ?>
