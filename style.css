@@ -1,0 +1,7 @@
+label {
+  display: block;
+}
+
+.message_ok {
+  background-color: green;
+}

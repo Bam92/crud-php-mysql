@@ -37,7 +37,6 @@
 
         <?php foreach ($statement as $row) : ?>
         <ul>
-
             <li>
                 <?php echo $row["title"] ?>
             </li>
