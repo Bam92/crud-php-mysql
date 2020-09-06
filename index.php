@@ -15,6 +15,7 @@
             <li><a href="./project_list.php">Projects list</a></li>
             <li><a href="./task_list.php">Tasks list</a></li>
             <li><a href="./project.php">Add project</a></li>
+            <li><a href="./task.php">Add task</a></li>
         </ul>
     </nav>
     <div>

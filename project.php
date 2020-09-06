@@ -16,7 +16,7 @@
 
             $connection = new PDO($dsn, $username, $password, $options);
 
-            $title = $_POST['title'];
+            $title = trim($_POST['title']);
             $category = $_POST['category'];
 
             $sql =  'INSERT INTO projects(title, category) VALUES(?, ?)';
