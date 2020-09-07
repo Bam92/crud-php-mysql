@@ -36,6 +36,25 @@ function get_all_projects_count()
     }
 }
 
+function add_project($title, $category)
+{
+    try {
+        global $connection;
+
+        $sql =  'INSERT INTO projects(title, category) VALUES(?, ?)';
+
+        $statement = $connection->prepare($sql);
+        $new_project = array($title, $category);
+
+        $affectedLines = $statement->execute($new_project);
+
+        return $affectedLines;
+    } catch (PDOException $err) {
+        echo $sql . "<br>" . $err->getMessage();
+        exit;
+    }
+}
+
 // --- TASKS ---
 function get_all_tasks()
 {
@@ -63,6 +82,31 @@ function get_all_tasks_count()
         $taskCount = $statement['nb'];
 
         return $taskCount;
+    } catch (PDOException $err) {
+        echo $sql . "<br>" . $err->getMessage();
+        exit;
+    }
+}
+
+function add_task($id, $title, $date, $time)
+{
+    try {
+        global $connection;
+
+        $new_task = array(
+            'id' => $id,
+            'title' => $title,
+            'date' => $date,
+            'time' => $time
+        );
+
+        $sql =  'INSERT INTO tasks(project_id, title, date_task, time_task) VALUES(:id, :title, :date, :time)';
+
+        $statement = $connection->prepare($sql);
+
+        $affectedLines = $statement->execute($new_task);
+
+        return $affectedLines;
     } catch (PDOException $err) {
         echo $sql . "<br>" . $err->getMessage();
         exit;
