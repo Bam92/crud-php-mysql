@@ -2,11 +2,10 @@
 $title = 'Tasks list';
 
 ob_start();
+require "nav.php";
 ?>
 
 <div class="container">
-    <p><a href="../">Go Home</a> or</p>
-    <p><a href='../controllers/task.php'>Add a new task</a></p>
 
     <h1><?php echo $title . " (" . $taskCount . ")"  ?></h1>
     <!-- If there's not yet data -->
@@ -29,5 +28,5 @@ ob_start();
 
 <?php
 $content = ob_get_clean();
-include 'layout.php'
+include 'layout.php';
 ?>

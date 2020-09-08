@@ -1,3 +1,23 @@
+/* Navigation */
+nav ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  background: greenyellow;
+}
+
+nav ul a:active {
+  color: red;
+}
+
+.welcome {
+  text-align: center;
+}
+
+.container {
+  margin: auto;
+}
+
 label {
   display: block;
 }

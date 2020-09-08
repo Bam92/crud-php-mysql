@@ -94,16 +94,21 @@ function add_task($id, $title, $date, $time)
         global $connection;
 
         $new_task = array(
-            'id' => $id,
-            'title' => $title,
-            'date' => $date,
-            'time' => $time
+            'project_id' => $id,
+            'title'      => $title,
+            'date_task'  => $date,
+            'time_task'  => $time
         );
 
-        $sql =  'INSERT INTO tasks(project_id, title, date_task, time_task) VALUES(:id, :title, :date, :time)';
+        // $sql =  'INSERT INTO tasks(project_id, title, date_task, time_task) VALUES(:id, :title, :date, :time)';
+        $sql = sprintf(
+            "INSERT INTO %s (%s) VALUES (%s)",
+            "tasks",
+            implode(",", array_keys($new_task)),
+            ":" . implode(", :", array_keys($new_task))
+        );
 
         $statement = $connection->prepare($sql);
-
         $affectedLines = $statement->execute($new_task);
 
         return $affectedLines;
