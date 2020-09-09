@@ -18,14 +18,28 @@ nav ul a:active {
   margin: auto;
 }
 
-label {
-  display: block;
-}
-
 .message_ok {
   background-color: green;
 }
 
 .message_error {
   background-color: red;
+}
+
+/* Form styles */
+
+label {
+  display: block;
+}
+
+label abbr {
+  color: red;
+}
+
+input:invalid {
+  border: 2px dashed red;
+}
+
+input:valid {
+  border: 1px solid green;
 }

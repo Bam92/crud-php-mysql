@@ -19,14 +19,20 @@ require "nav.php";
     ?>
 
     <form method="post">
-        <label for="title">Title</label>
-        <input type="text" placeholder="New project" name="title" id="title">
-        <label for="category">Category</label>
-        <select name="category" id="category">
+        <label for="title">
+            <span>Title:</span>
+            <strong><abbr title="required">*</abbr></strong>
+        </label>
+        <input type="text" placeholder="New project" name="title" id="title" required>
+        <label for="category">
+            <span>Category:</span>
+            <strong><abbr title="required">*</abbr></strong>
+        </label>
+        <select name="category" id="category" required>
             <option value="">Select a category</option>
             <option value="Professional">Professional</option>
             <option value="Personal">Personal</option>
-            <option value="Charity">Charity</o ption>
+            <option value="Charity">Charity</option>
         </select>
         <input type="submit" name="submit" value="Add">
     </form>

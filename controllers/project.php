@@ -1,5 +1,6 @@
 <?php
 require_once "../model/model.php";
+require "common.php";
 
 if (isset($_POST['submit'])) {
     $title = trim($_POST['title']);
@@ -10,7 +11,7 @@ if (isset($_POST['submit'])) {
     } else {
         add_project($title, $category);
         header('Refresh:4; url=project_list.php');
-        $confirm_message = 'Project added successfully';
+        $confirm_message = escape($title) . ' added successfully';
     }
 }
 
