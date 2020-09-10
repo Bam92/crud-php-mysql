@@ -3,6 +3,24 @@ require "connection.php";
 
 $connection = db_connect();
 
+function titleExists($table, $title)
+{
+    try {
+        global $connection;
+
+        $sql =  'SELECT title FROM ' . $table . ' WHERE title = ?';
+        $statement = $connection->prepare($sql);
+        $statement->execute(array($title));
+
+        if ($statement->rowCount() > 0) {
+            return true;
+        }
+    } catch (PDOException $exception) {
+        echo $sql . "<br>" . $exception->getMessage();
+        exit;
+    }
+}
+
 // --- PROJECTS ---
 function get_all_projects()
 {
@@ -13,8 +31,8 @@ function get_all_projects()
         $projects = $connection->query($sql);
 
         return $projects;
-    } catch (PDOException $err) {
-        echo $sql . "<br>" . $err->getMessage();
+    } catch (PDOException $exception) {
+        echo $sql . "<br>" . $exception->getMessage();
         exit;
     }
 }
@@ -30,8 +48,8 @@ function get_all_projects_count()
         $projectCount = $statement['nb'];
 
         return $projectCount;
-    } catch (PDOException $err) {
-        echo $sql . "<br>" . $err->getMessage();
+    } catch (PDOException $exception) {
+        echo $sql . "<br>" . $exception->getMessage();
         exit;
     }
 }
@@ -49,8 +67,8 @@ function add_project($title, $category)
         $affectedLines = $statement->execute($new_project);
 
         return $affectedLines;
-    } catch (PDOException $err) {
-        echo $sql . "<br>" . $err->getMessage();
+    } catch (PDOException $exception) {
+        echo $sql . "<br>" . $exception->getMessage();
         exit;
     }
 }
@@ -65,8 +83,8 @@ function get_all_tasks()
         $tasks = $connection->query($sql);
 
         return $tasks;
-    } catch (PDOException $err) {
-        echo $sql . "<br>" . $err->getMessage();
+    } catch (PDOException $exception) {
+        echo $sql . "<br>" . $exception->getMessage();
         exit;
     }
 }
@@ -82,8 +100,8 @@ function get_all_tasks_count()
         $taskCount = $statement['nb'];
 
         return $taskCount;
-    } catch (PDOException $err) {
-        echo $sql . "<br>" . $err->getMessage();
+    } catch (PDOException $exception) {
+        echo $sql . "<br>" . $exception->getMessage();
         exit;
     }
 }
@@ -100,7 +118,6 @@ function add_task($id, $title, $date, $time)
             'time_task'  => $time
         );
 
-        // $sql =  'INSERT INTO tasks(project_id, title, date_task, time_task) VALUES(:id, :title, :date, :time)';
         $sql = sprintf(
             "INSERT INTO %s (%s) VALUES (%s)",
             "tasks",
@@ -112,8 +129,8 @@ function add_task($id, $title, $date, $time)
         $affectedLines = $statement->execute($new_task);
 
         return $affectedLines;
-    } catch (PDOException $err) {
-        echo $sql . "<br>" . $err->getMessage();
+    } catch (PDOException $exception) {
+        echo $sql . "<br>" . $exception->getMessage();
         exit;
     }
 }

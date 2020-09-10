@@ -1,5 +1,6 @@
 <?php
 require_once "../model/model.php";
+require "common.php";
 
 $projects = get_all_projects();
 
@@ -12,10 +13,14 @@ if (isset($_POST['submit'])) {
     if (empty($id) || empty($title) || empty($date) || empty($time)) {
         $error_message = "One or more fields empty";
     } else {
-        add_task($id, $title, $date, $time);
 
-        header('Refresh:4; url=task_list.php');
-        $confirm_message = 'Task added successfully';
+        if (titleExists("tasks", $title)) {
+            $error_message = "I'm sorry, but looks like " . $title . " already exists";
+        } else {
+            header('Refresh:4; url=task_list.php');
+            add_task($id, $title, $date, $time);
+            $confirm_message = escape($title) . ' added successfully';
+        }
     }
 }
 
