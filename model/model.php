@@ -79,7 +79,12 @@ function get_all_tasks()
     try {
         global $connection;
 
-        $sql =  'SELECT * FROM tasks ORDER BY date_task';
+        $sql =  'SELECT t.*, DATE_FORMAT(t.date_task, "%m/%d/%Y"), p.title project 
+        FROM tasks t
+        INNER JOIN projects p 
+        ON t.project_id = p.id 
+        ORDER BY p.title ASC, t.date_task DESC';
+
         $tasks = $connection->query($sql);
 
         return $tasks;

@@ -3,6 +3,7 @@ $title = 'Projects list';
 
 ob_start();
 require 'nav.php';
+require '../controllers/common.php';
 ?>
 
 <div class="container">
@@ -19,12 +20,11 @@ require 'nav.php';
     <ul>
         <?php foreach ($projects as $project) : ?>
         <li>
-            <?php echo $project["title"] ?>
+            <?php echo escape($project["title"]) ?>
         </li>
         <?php endforeach; ?>
     </ul>
 </div>
-
 
 <?php
 $content = ob_get_clean();

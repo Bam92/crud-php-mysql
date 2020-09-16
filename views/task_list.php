@@ -3,6 +3,7 @@ $title = 'Tasks list';
 
 ob_start();
 require "nav.php";
+require "../controllers/common.php";
 ?>
 
 <div class="container">
@@ -19,7 +20,7 @@ require "nav.php";
     <ul>
         <?php foreach ($tasks as $task) : ?>
         <li>
-            <?php echo $task["title"] ?>
+            <?php echo escape($task["title"]) ?>
         </li>
         <?php endforeach; ?>
     </ul>

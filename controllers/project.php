@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
         $error_message = "Title or category empty";
     } else {
         if (titleExists("projects", $title)) {
-            $error_message = "I'm sorry, but looks like \"" . $title . "\" already exists";
+            $error_message = "I'm sorry, but looks like \"" . escape($title) . "\" already exists";
         } else {
             header('Refresh:4; url=project_list.php');
             add_project($title, $category);

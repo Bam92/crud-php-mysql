@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
     } else {
 
         if (titleExists("tasks", $title)) {
-            $error_message = "I'm sorry, but looks like " . $title . " already exists";
+            $error_message = "I'm sorry, but looks like " . escape($title) . " already exists";
         } else {
             header('Refresh:4; url=task_list.php');
             add_task($id, $title, $date, $time);
