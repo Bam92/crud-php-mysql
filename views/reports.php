@@ -9,6 +9,50 @@ require 'nav.php';
 
     <h1><?php echo $title ?></h1>
 
+    <div class="filter">
+        <p>Filter by</p>
+        <form method="get">
+            <select name="filter" id="project">
+                <option value="">Select one</option>
+
+                <optgroup label="Projects">
+
+                    <?php foreach ($projects as $project) : ?>
+                    <option value="<?php echo 'project:' . $project["id"] ?>"><?php echo escape($project["title"]) ?>
+                    </option>
+
+                    <?php endforeach; ?>
+                </optgroup>
+                <optgroup label="Date">
+                    <option value="date:<?php
+                                        echo date('m/d/y', strtotime("last week monday"));
+                                        echo ":";
+                                        echo date('m/d/y', strtotime("last week sunday"));
+                                        ?>
+                    ">Last Week</option>
+                    <option value="date:<?php
+                                        echo date('m/d/y', strtotime("this week monday"));
+                                        echo ":";
+                                        echo date('m/d/y', strtotime("this week sunday"));
+                                        ?>
+                    ">This Week</option>
+                    <option value="date:<?php
+                                        echo date('m/d/y', strtotime("first day of last month"));
+                                        echo ":";
+                                        echo date('m/d/y', strtotime("last day of last month"));
+                                        ?>
+                    ">Last Month</option>
+                    <option value="date:<?php
+                                        echo date('m/d/y', strtotime("first day of this month"));
+                                        echo ":";
+                                        echo trim(date('m/d/y')); ?>
+                    ">This Month</option>
+                </optgroup>
+                <input type="submit" value="Run">
+            </select>
+        </form>
+    </div>
+
     <table>
         <thead>
             <tr>
@@ -21,14 +65,13 @@ require 'nav.php';
         $time_total = $project_id = $project_total = 0;
 
         foreach ($tasks as $task) :
-
             // Add a row for each project title
             if ($project_id != $task["project_id"]) {
                 if ($project_id > 0) {
 
         ?>
         <tr>
-            <th colspan="2" class="total">
+            <th colspan=" 2" class="total">
                 Subtotal
             </th>
             <th>
@@ -45,14 +88,13 @@ require 'nav.php';
                         echo $task['project'];
                         $project_id = $task["project_id"];
                     }
-
                         ?>
             </th>
         </tr>
 
         <tr>
             <td>
-                <?php echo $task["title"] ?>
+                <?php echo escape($task["title"]) ?>
             </td>
             <td>
                 <?php echo $task["date_task"] ?>
@@ -64,6 +106,7 @@ require 'nav.php';
         <?php
                 $time_total += $task["time_task"];
                 $project_total += $task["time_task"];
+
             endforeach;
                 ?>
         <tr>

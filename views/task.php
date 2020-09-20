@@ -26,7 +26,7 @@ require 'nav.php';
         <select name="project" id="project" required>
             <option value="">Select a project</option>
             <?php foreach ($projects as $project) { ?>
-            <option value="<?php echo $project['id'] ?>"><?php echo $project['title'] ?></option>
+            <option value="<?php echo $project['id'] ?>"><?php echo escape($project['title']) ?></option>
             <?php } ?>
         </select>
         <label for="title">

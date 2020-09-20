@@ -74,18 +74,48 @@ function add_project($title, $category)
 }
 
 // --- TASKS ---
-function get_all_tasks()
+function get_all_tasks($filter = null)
 {
     try {
         global $connection;
 
-        $sql =  'SELECT t.*, DATE_FORMAT(t.date_task, "%m/%d/%Y"), p.title project 
+        $sql =  'SELECT t.*, p.title project 
         FROM tasks t
         INNER JOIN projects p 
-        ON t.project_id = p.id 
-        ORDER BY p.title ASC, t.date_task DESC';
+        ON t.project_id = p.id';
 
-        $tasks = $connection->query($sql);
+        $where = '';
+        $orderBy = ' ORDER BY t.date_task DESC';
+
+        if (is_array($filter)) {
+            // if ($filter[0] == 'project') {
+            //     $where = ' WHERE p.id = ?';
+            // }
+            switch ($filter[0]) {
+                case 'project':
+                    $where = ' WHERE p.id = ?';
+                    break;
+                case 'date':
+                    $where = ' WHERE DATE_FORMAT(t.date_task, "%m/%d/%y") >= ?  AND DATE_FORMAT(t.date_task, "%m/%d/%y" ) <= ?';
+                    break;
+            }
+        }
+
+
+        if ($filter) {
+            $orderBy = ' ORDER BY p.title ASC, t.date_task DESC';
+        }
+
+        $tasks = $connection->prepare($sql . $where . $orderBy);
+        if (is_array($filter)) {
+            $tasks->bindValue(1, $filter[1], PDO::PARAM_INT);
+            if ($filter[0] == 'date') {
+                $tasks->bindValue(1, $filter[1], PDO::PARAM_STR);
+                $tasks->bindValue(2, trim($filter[2]), PDO::PARAM_STR);
+            }
+        }
+        $tasks->execute();
+        // $tasks->debugDumpParams($tasks);
 
         return $tasks;
     } catch (PDOException $exception) {
