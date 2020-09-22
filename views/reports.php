@@ -16,11 +16,22 @@ require 'nav.php';
                 <option value="">Select one</option>
 
                 <optgroup label="Projects">
-
                     <?php foreach ($projects as $project) : ?>
                     <option value="<?php echo 'project:' . $project["id"] ?>"><?php echo escape($project["title"]) ?>
                     </option>
 
+                    <?php endforeach; ?>
+
+                </optgroup>
+                <optgroup label="Category">
+                    <?php
+                    $categories = ["Personal", "Professional", "Business"];
+                    foreach ($categories as $categorie) :
+                    ?>
+
+                    <option value="<?php echo 'category:' . $categorie ?>">
+                        <?php echo escape($categorie); ?>
+                    </option>
                     <?php endforeach; ?>
                 </optgroup>
                 <optgroup label="Date">
@@ -48,8 +59,8 @@ require 'nav.php';
                                         echo trim(date('m/d/y')); ?>
                     ">This Month</option>
                 </optgroup>
-                <input type="submit" value="Run">
             </select>
+            <input type="submit" value="Run">
         </form>
     </div>
 

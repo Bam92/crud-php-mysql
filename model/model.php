@@ -88,12 +88,12 @@ function get_all_tasks($filter = null)
         $orderBy = ' ORDER BY t.date_task DESC';
 
         if (is_array($filter)) {
-            // if ($filter[0] == 'project') {
-            //     $where = ' WHERE p.id = ?';
-            // }
             switch ($filter[0]) {
                 case 'project':
                     $where = ' WHERE p.id = ?';
+                    break;
+                case 'category':
+                    $where = ' WHERE p.category = ?';
                     break;
                 case 'date':
                     $where = ' WHERE DATE_FORMAT(t.date_task, "%m/%d/%y") >= ?  AND DATE_FORMAT(t.date_task, "%m/%d/%y" ) <= ?';
@@ -109,6 +109,9 @@ function get_all_tasks($filter = null)
         $tasks = $connection->prepare($sql . $where . $orderBy);
         if (is_array($filter)) {
             $tasks->bindValue(1, $filter[1], PDO::PARAM_INT);
+            if ($filter[0] == 'category') {
+                $tasks->bindValue(1, $filter[1], PDO::PARAM_STR);
+            }
             if ($filter[0] == 'date') {
                 $tasks->bindValue(1, $filter[1], PDO::PARAM_STR);
                 $tasks->bindValue(2, trim($filter[2]), PDO::PARAM_STR);
