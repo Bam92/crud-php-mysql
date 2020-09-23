@@ -1,6 +1,8 @@
 <?php
 $title = 'Add Project';
-
+if (!empty($_GET['id'])) {
+    $title = "Update project";
+}
 ob_start();
 require "nav.php";
 ?>
@@ -23,18 +25,35 @@ require "nav.php";
             <span>Title:</span>
             <strong><abbr title="required">*</abbr></strong>
         </label>
-        <input type="text" placeholder="New project" name="title" id="title" required>
+        <input type="text" placeholder="New project" name="title" id="title" value="<?php
+                                                                                    echo $project_title; ?>">
         <label for="category">
             <span>Category:</span>
             <strong><abbr title="required">*</abbr></strong>
         </label>
-        <select name="category" id="category" required>
+        <?php
+        ?> <select name="category" id="category" required>
             <option value="">Select a category</option>
-            <option value="Professional">Professional</option>
-            <option value="Personal">Personal</option>
-            <option value="Charity">Charity</option>
+            <option value="Professional" <?php
+                                            if ($category == "Professional") {
+                                                echo ' selected';
+                                            }
+                                            ?>>Professional</option>
+            <option value="Personal" <?php
+                                        if ($category == "Personal") {
+                                            echo ' selected';
+                                        }
+                                        ?>>Personal</option>
+            <option value="Charity" <?php
+                                    if ($category == "Charity") {
+                                        echo ' selected';
+                                    }
+                                    ?>>Charity</option>
         </select>
-        <input type="submit" name="submit" value="Add">
+        <?php if (!empty($id)) { ?>
+        <input type="hidden" name="id" value="<?php echo $id ?>" />
+        <?php } ?>
+        <input type="submit" name="submit" value="<?php echo (isset($id) and (!empty($id))) ? "Update" : "Add";  ?>">
     </form>
 </div>
 

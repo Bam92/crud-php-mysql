@@ -20,7 +20,9 @@ require '../controllers/common.php';
     <ul>
         <?php foreach ($projects as $project) : ?>
         <li>
-            <?php echo escape($project["title"]) ?>
+            <a href="../controllers/project.php?id= <?php echo $project['id']; ?>">
+                <?php echo escape($project["title"]) ?>
+            </a>
         </li>
         <?php endforeach; ?>
     </ul>
