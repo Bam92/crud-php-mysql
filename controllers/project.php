@@ -7,6 +7,7 @@ $project_title = $category = '';
 if (isset($_GET['id'])) {
     list($id, $project_title, $category) = get_project($_GET['id']);
 }
+
 if (isset($_POST['submit'])) {
     $id = null;
     if (isset($_POST['id'])) {

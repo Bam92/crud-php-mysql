@@ -53,6 +53,7 @@ function get_project($id)
         exit;
     }
 }
+
 function get_all_projects_count()
 {
     try {
@@ -98,6 +99,23 @@ function add_project($title, $category, $id)
 }
 
 // --- TASKS ---
+function delete_task($id)
+{
+    try {
+        global $connection;
+
+        $sql =  'DELETE FROM tasks WHERE id = ?';
+        $project = $connection->prepare($sql);
+        $project->bindValue(1, $id, PDO::PARAM_INT);
+        $project->execute();
+
+        return true;
+    } catch (PDOException $exception) {
+        echo $sql . "<br>" . $exception->getMessage();
+        exit;
+    }
+}
+
 function get_all_tasks($filter = null)
 {
     try {
