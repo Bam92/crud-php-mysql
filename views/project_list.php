@@ -1,9 +1,9 @@
 <?php
 $title = 'Projects list';
 
+$uri = getRootURI();
+
 ob_start();
-require 'nav.php';
-require '../controllers/common.php';
 ?>
 
 <div class="container">
@@ -13,14 +13,14 @@ require '../controllers/common.php';
     <?php if ($projectCount == 0) { ?>
     <div>
         <p>You have not yet added any project </p>
-        <p><a href='../controllers/project.php'>Add project</a></p>
+        <p><a href="<?php echo $uri . "/projects/add"; ?>">Add project</a></p>
     </div>
     <?php } ?>
 
     <ul>
         <?php foreach ($projects as $project) : ?>
         <li>
-            <a href="../controllers/project.php?id= <?php echo $project['id']; ?>">
+            <a href=" ./add?id=<?php echo $project['id']; ?>">
                 <?php echo escape($project["title"]) ?>
             </a>
         </li>

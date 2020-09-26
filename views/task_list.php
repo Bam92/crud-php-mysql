@@ -2,8 +2,6 @@
 $title = 'Tasks list';
 
 ob_start();
-require "nav.php";
-require "../controllers/common.php";
 ?>
 
 <div class="container">

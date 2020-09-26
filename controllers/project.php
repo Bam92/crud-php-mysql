@@ -1,6 +1,7 @@
 <?php
-require_once "../model/model.php";
-require "common.php";
+require_once "./model/model.php";
+
+$rootURI = getRootURI();
 
 $project_title = $category = '';
 
@@ -23,7 +24,7 @@ if (isset($_POST['submit'])) {
             $error_message = "I'm sorry, but looks like \"" . escape($title) . "\" already exists";
         } else {
             if (add_project($title, $category, $id)) {
-                header('Refresh:4; url=project_list.php');
+                header('Refresh:4; url=list');
                 if (!empty($id)) {
                     $confirm_message = escape($title) . ' updated successfully';
                 } else {
@@ -36,4 +37,4 @@ if (isset($_POST['submit'])) {
     }
 }
 
-require "../views/project.php";
+require "./views/project.php";

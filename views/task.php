@@ -2,7 +2,6 @@
 $title = 'Add Task';
 
 ob_start();
-require 'nav.php';
 ?>
 
 <div class="container">

@@ -4,7 +4,6 @@ if (!empty($_GET['id'])) {
     $title = "Update project";
 }
 ob_start();
-require "nav.php";
 ?>
 
 <div class="container">
