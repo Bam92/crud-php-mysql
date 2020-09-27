@@ -2,6 +2,7 @@
 $title = 'Tasks list';
 
 ob_start();
+require "views/nav.php";
 ?>
 
 <div class="container">

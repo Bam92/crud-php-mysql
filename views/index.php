@@ -2,6 +2,7 @@
 $title = 'theTrackerApp';
 
 ob_start();
+require "views/nav.php";
 ?>
 <div class="welcome">
     <h1>Welcome to theTrackerApp</h1>

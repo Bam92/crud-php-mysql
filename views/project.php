@@ -1,9 +1,9 @@
 <?php
-$title = 'Add Project';
-if (!empty($_GET['id'])) {
-    $title = "Update project";
-}
+$title = (!empty($_GET['id'])) ? "Update Project" : "Add Project";
+
 ob_start();
+require "views/nav.php";
+
 ?>
 
 <div class="container">

@@ -4,6 +4,8 @@ $title = 'Projects list';
 $uri = getRootURI();
 
 ob_start();
+require "views/nav.php";
+
 ?>
 
 <div class="container">

@@ -1,6 +1,5 @@
 <?php
 require_once "utils/common.php";
-require_once "views/nav.php";
 
 $uri = getRootURI();
 
@@ -31,7 +30,7 @@ switch ($_SERVER['REQUEST_URI']) {
         require __DIR__ . '/controllers/reports.php';
         break;
 
-    case preg_match('/^projects\/\?id=\d/', $_SERVER['REQUEST_URI']):
+    case preg_match('/\/projects\/\?id=\d/', $_SERVER['REQUEST_URI']):
         require __DIR__ . '/controllers/project.php';
         break;
 
