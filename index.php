@@ -6,6 +6,7 @@ $uri = getRootURI();
 switch ($_SERVER['REQUEST_URI']) {
 
     case $uri . '':
+    case $uri . '/':
     case  '/time-tracker/':
         require __DIR__ . '/views/index.php';
         break;
@@ -30,9 +31,9 @@ switch ($_SERVER['REQUEST_URI']) {
         require __DIR__ . '/controllers/reports.php';
         break;
 
-    case preg_match('/\/projects\/\?id=\d/', $_SERVER['REQUEST_URI']):
-        require __DIR__ . '/controllers/project.php';
-        break;
+        // case preg_match($uri . '/\/projects\/\?id=\d/', $_SERVER['REQUEST_URI']):
+        //     require __DIR__ . '/controllers/project.php';
+        //     break;
 
     default:
         http_response_code(404);
