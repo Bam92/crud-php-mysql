@@ -1,8 +1,6 @@
 <?php
 require_once "./model/model.php";
 
-$rootURI = getRootURI();
-
 $project_title = $category = '';
 
 if (isset($_GET['id'])) {

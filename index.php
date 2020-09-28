@@ -1,4 +1,5 @@
 <?php
+require_once "utils/common.php";
 
 $request = $_SERVER['REQUEST_URI'];
 

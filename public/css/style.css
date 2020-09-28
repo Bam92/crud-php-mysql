@@ -1,22 +1,65 @@
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css");
+
 /* Navigation */
-nav ul {
-  display: flex;
-  list-style-type: none;
-  justify-content: space-around;
-  background: greenyellow;
+.nav-item {
+  width: 100%;
+  color: #fff;
+  border-bottom: 1px solid #030303;
 }
 
-nav ul a:active {
-  color: red;
+.nav-item:hover {
+  background: #393f44;
+  font-weight: bold;
+  color: #00cccc;
+  border-left: 3px solid #00cccc;
+  cursor: pointer;
 }
 
-.welcome {
-  text-align: center;
+#subNav {
+  background: #030303;
 }
 
-.container {
-  margin: auto;
+.nav-item:focus {
+  border-left: 3px solid red;
 }
+
+#sidebar nav,
+#sidebar ul {
+  width: 105%;
+  padding-left: unset;
+}
+
+#sidebar {
+  min-height: 90vh;
+  transition: all 0.3s;
+}
+
+/* Landing page */
+/* #welcome h1 {
+  max-width: 300px;
+  line-height: 1.5;
+}
+#call_to_action a {
+  background: #00cccc;
+  border: none;
+}
+#card a {
+  color: #030303;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+#card .card {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  width: 25rem;
+  border-top: 2px solid #00cccc;
+}
+#card svg {
+  color: blue;
+}
+#card svg:hover {
+  color: #fff;
+  background: blue;
+} */
 
 .message_ok {
   background-color: green;
@@ -27,7 +70,6 @@ nav ul a:active {
 }
 
 /* Form styles */
-
 label {
   display: block;
 }

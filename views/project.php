@@ -2,7 +2,6 @@
 $title = (!empty($_GET['id'])) ? "Update Project" : "Add Project";
 
 ob_start();
-require "views/nav.php";
 
 ?>
 

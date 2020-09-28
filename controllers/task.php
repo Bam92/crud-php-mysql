@@ -1,8 +1,6 @@
 <?php
 require_once "./model/model.php";
 
-$uri = getRootURI();
-
 $projects = get_all_projects();
 
 if (isset($_POST['submit'])) {
