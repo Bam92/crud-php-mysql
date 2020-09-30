@@ -2,7 +2,6 @@
 $title = 'Reports';
 
 ob_start();
-require "views/nav.php";
 
 ?>
 

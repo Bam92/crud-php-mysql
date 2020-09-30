@@ -2,7 +2,6 @@
 $title = 'Add Task';
 
 ob_start();
-require "views/nav.php";
 
 ?>
 

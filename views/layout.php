@@ -11,7 +11,11 @@
 </head>
 
 <body>
-    <?php echo $content ?>
+    <?php
+    require "nav.php";
+
+    echo $content;
+    ?>
 
     <script src="./public/js/app.js"></script>
 </body>
