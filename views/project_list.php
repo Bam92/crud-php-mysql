@@ -2,10 +2,6 @@
 $title = 'Projects list';
 
 ob_start();
-<<<<<<< HEAD
-=======
-
->>>>>>> refactor: add nav.php only in layout.php
 ?>
 
 <h1><?php echo $title . " (" . $projectCount . ")";  ?></h1>

@@ -15,14 +15,14 @@ ob_start();
         <div id="call_to_action" class="px-5 py-5">
             <h1 class="mb-4"> Become more productive. Focus on your tasks. </h1>
             <h3 class="mb-4">theTrackerApp helps track your time</h3>
-            <a href="<?php echo $uri . "/projects/add"; ?>" class="btn btn-primary btn-lg">Get started</a>
+            <a href="/projects/add" class="btn btn-primary btn-lg">Get started</a>
         </div>
     </div>
 </div>
 
 <div class="row align-items-center mt-5 text-uppercase">
     <!-- <div class="col-12 col-md-6"> -->
-    <a href="<?php echo $uri . "/projects/list"; ?>" class="col-12 col-md-6  ">
+    <a href="/projects/list" class="col-12 col-md-6 ">
         <!-- <div class="row"> -->
         <div class="card row">
             <div id="desc" class="col">
@@ -30,7 +30,7 @@ ob_start();
                 <h1><?php echo $projectCount; ?></h1>
             </div>
             <div class="col">
-                <a href="<?php echo $uri . "/projects/add"; ?>" class="align-self-center justify-self-end ml-4">
+                <a href="/projects/add" class="align-self-center justify-self-end ml-4">
                     <div>
                         <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-plus-circle" fill="currentColor"
                             xmlns="http://www.w3.org/2000/svg">
@@ -47,13 +47,13 @@ ob_start();
     </a>
 
     <div class="col-12 col-md-6">
-        <a href=" <?php echo $uri . "/tasks/list"; ?>">
+        <a href=" /tasks/list">
             <div class="card d-flex justify-content-center px-3 py-3 ml-2 flex-row">
                 <div id="desc">
                     <h4>tasks</h4>
                     <h1><?php echo $taskCount; ?></h1>
                 </div>
-                <a href="<?php echo $uri . "/tasks/add"; ?>" class="align-self-center justify-self-end ml-4">
+                <a href="/tasks/add" class="align-self-center justify-self-end ml-4">
                     <div>
                         <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-plus-circle" fill="currentColor"
                             xmlns="http://www.w3.org/2000/svg">
