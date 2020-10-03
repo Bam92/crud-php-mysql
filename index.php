@@ -7,7 +7,6 @@ switch ($_SERVER['REQUEST_URI']) {
 
     case $uri . '':
     case $uri . '/':
-    case  '/time-tracker/':
         require __DIR__ . '/views/index.php';
         break;
 
