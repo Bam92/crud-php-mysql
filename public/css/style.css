@@ -1,21 +1,15 @@
+.wrapper {
+  /* display: flex; */
+  /* width: 100%; */
+  /* align-items: stretch; */
+}
+
 /* Navigation */
-nav ul {
-  display: flex;
-  list-style-type: none;
-  justify-content: space-around;
-  background: greenyellow;
-}
-
-nav ul a:active {
-  color: red;
-}
-
-.welcome {
-  text-align: center;
-}
-
-.container {
-  margin: auto;
+#sidebar {
+  min-height: 100vh;
+  color: #fff;
+  transition: all 0.3s;
+  padding-left: 3rem;
 }
 
 .message_ok {

@@ -7,17 +7,25 @@
     <link rel="stylesheet" href="../public/css/style.css">
     <link rel="stylesheet" href="public/css/style.css">
 
+    <!--Bootstrap v5 -->
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
+
     <title><?php echo $title ?></title>
 </head>
 
 <body>
-    <?php
-    require "nav.php";
 
-    echo $content;
-    ?>
+    <div class="row">
+        <?php require "nav.php"; ?>
 
-    <script src="./public/js/app.js"></script>
+        <!-- Main content -->
+        <div id="content" class="col-10">
+            <?php echo $content; ?>
+        </div>
+    </div>
+    <script src=" ./public/js/app.js">
+    </script>
 </body>
 
 </html>

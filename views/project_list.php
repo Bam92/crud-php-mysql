@@ -17,6 +17,7 @@ ob_start();
         <p><a href="<?php echo $uri . "/projects/add"; ?>">Add project</a></p>
     </div>
     <?php } ?>
+    <p><a href="<?php echo $uri . "/projects/add"; ?>">Add project</a></p>
 
     <ul>
         <?php foreach ($projects as $project) : ?>
