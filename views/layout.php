@@ -20,10 +20,12 @@
         <?php require "nav.php"; ?>
 
         <!-- Main content -->
-        <div id="content" class="col-10">
+        <div id="content" class="col-lg-10 container p-5">
             <?php echo $content; ?>
         </div>
     </div>
+    <script src="public/js/bootstrap.min.js"></script>
+    <script src="../public/js/bootstrap.min.js"></script>
     <script src=" ./public/js/app.js">
     </script>
 </body>
