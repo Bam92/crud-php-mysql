@@ -20,10 +20,13 @@
         <?php require "nav.php"; ?>
 
         <!-- Main content -->
-        <div id="content" class="col-lg-10 container p-5">
+        <div id="content" class="col-12 col-md-10 mx-0">
             <?php echo $content; ?>
         </div>
     </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"
+        integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous">
+    </script>
     <script src="public/js/bootstrap.min.js"></script>
     <script src="../public/js/bootstrap.min.js"></script>
     <script src=" ./public/js/app.js">

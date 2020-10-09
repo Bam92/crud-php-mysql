@@ -1,3 +1,5 @@
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css");
+
 /* Navigation */
 .nav-item {
   width: 105%;
@@ -17,7 +19,7 @@
   background: #030303;
 }
 
-.nav-item:active {
+.nav-item:focus {
   border-left: 3px solid red;
 }
 
@@ -30,6 +32,37 @@
 #sidebar {
   min-height: 100vh;
   transition: all 0.3s;
+}
+
+/* Landing page */
+#welcome h1 {
+  max-width: 300px;
+  line-height: 1.5;
+}
+
+#call_to_action a {
+  background: #00cccc;
+  border: none;
+}
+
+#card a {
+  color: #030303;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#card .card {
+  width: 25rem;
+  border-top: 2px solid #00cccc;
+}
+
+#card svg {
+  color: blue;
+}
+
+#card svg:hover {
+  color: #fff;
+  background: blue;
 }
 
 .message_ok {
