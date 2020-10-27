@@ -2,7 +2,7 @@
 function db_connect()
 {
     try {
-        require "config.php";
+        require "config/dev.php";
 
         $connection = new PDO($dsn, $username, $password, $options);
     } catch (PDOException $err) {

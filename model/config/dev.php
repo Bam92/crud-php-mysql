@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Configuration for database connection
+ * Configuration for local development database connection
  *
  */
 // $host       = "us-cdbr-east-02.cleardb.com";
