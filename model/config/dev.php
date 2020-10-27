@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Configuration for database connection
+ * Configuration for local development database connection
  *
  */
 

@@ -1,10 +1,10 @@
 <nav>
     <ul>
-        <li><a href="http://localhost/time-tracker/">theTrackerApp</a></li>
-        <li><a href="http://localhost/time-tracker/controllers/project_list.php">Projects list</a></li>
-        <li><a href="http://localhost/time-tracker/controllers/task_list.php">Tasks list</a></li>
-        <li><a href="http://localhost/time-tracker/controllers/project.php">Add project</a></li>
-        <li><a href="http://localhost/time-tracker/controllers/task.php">Add task</a></li>
-        <li><a href="http://localhost/time-tracker/controllers/reports.php">Reports</a></li>
+        <li><a href="/">theTrackerApp</a></li>
+        <li><a href="/controllers/project_list.php">Projects list</a></li>
+        <li><a href="/task_list.php">Tasks list</a></li>
+        <li><a href="/controllers/project.php">Add project</a></li>
+        <li><a href="/controllers/task.php">Add task</a></li>
+        <li><a href="/controllers/reports.php">Reports</a></li>
     </ul>
 </nav>
