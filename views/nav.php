@@ -1,19 +1,20 @@
 <?php $uri = getRootURI(); ?>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="subNav">
+<nav class="col-12 navbar navbar-expand-md navbar-dark bg-dark" id="subNav">
     <div class="container-fluid">
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidebar"
             aria-controls="#sidebar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a href="<?php echo $uri; ?>" class="navbar-brand text-white">
-            the Tracker App </a>
+        <a href="<?php echo $uri; ?>" class="navbar-brand h1 text-white text-uppercase">
+            the Tracker App
+        </a>
     </div>
 </nav>
 
 <!-- Sidebar -->
 <div class="col-md-2 navbar navbar-expand-lg navbar-dark bg-dark">
-    <nav class="nav flex-column collapse navbar-collapse" id="sidebar">
+    <nav class="flex-column collapse navbar-collapse" id="sidebar">
         <ul>
             <li class="nav-item p-3 d-flex ">
                 <span>

@@ -2,7 +2,7 @@
 
 /* Navigation */
 .nav-item {
-  width: 105%;
+  width: 100%;
   color: #fff;
   border-bottom: 1px solid #030303;
 }
@@ -25,17 +25,17 @@
 
 #sidebar nav,
 #sidebar ul {
-  width: 100%;
+  width: 105%;
   padding-left: unset;
 }
 
 #sidebar {
-  min-height: 100vh;
+  min-height: 90vh;
   transition: all 0.3s;
 }
 
 /* Landing page */
-#welcome h1 {
+/* #welcome h1 {
   max-width: 300px;
   line-height: 1.5;
 }
@@ -52,6 +52,7 @@
 }
 
 #card .card {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   width: 25rem;
   border-top: 2px solid #00cccc;
 }
@@ -63,7 +64,7 @@
 #card svg:hover {
   color: #fff;
   background: blue;
-}
+} */
 
 .message_ok {
   background-color: green;
@@ -74,7 +75,6 @@
 }
 
 /* Form styles */
-
 label {
   display: block;
 }

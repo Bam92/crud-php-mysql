@@ -16,12 +16,14 @@
 
 <body>
 
-    <div class="row">
-        <?php require "nav.php"; ?>
+    <div class="container-fluid">
+        <div class="row">
+            <?php require "nav.php"; ?>
 
-        <!-- Main content -->
-        <div id="content" class="col-12 col-md-10 mx-0">
-            <?php echo $content; ?>
+            <!-- Main content -->
+            <div id="content" class="col col-md-10 container-fluid">
+                <?php echo $content; ?>
+            </div>
         </div>
     </div>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"
