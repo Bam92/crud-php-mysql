@@ -99,15 +99,18 @@ function add_project($title, $category, $id)
 }
 
 // --- TASKS ---
+/**
+ * @param int id
+ */
 function delete_task($id)
 {
     try {
         global $connection;
 
         $sql =  'DELETE FROM tasks WHERE id = ?';
-        $project = $connection->prepare($sql);
-        $project->bindValue(1, $id, PDO::PARAM_INT);
-        $project->execute();
+        $task = $connection->prepare($sql);
+        $task->bindValue(1, $id, PDO::PARAM_INT);
+        $task->execute();
 
         return true;
     } catch (PDOException $exception) {
