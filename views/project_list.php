@@ -6,7 +6,7 @@ ob_start();
 
 <h1><?php echo $title . " (" . $projectCount . ")";  ?></h1>
 
-<a href="<?php echo $uri . "/projects/add"; ?>">
+<a href="projects/add">
     <button class="btn-primary">Add project</button>
 </a>
 <!-- If there's not yet data -->
@@ -14,7 +14,7 @@ ob_start();
 
 <div>
     <p>You have not yet added any project </p>
-    <p><a href="<?php echo $uri . "/projects/add"; ?>">Add project</a></p>
+    <p><a href="/projects/add">Add project</a></p>
 </div>
 
 <?php } ?>
