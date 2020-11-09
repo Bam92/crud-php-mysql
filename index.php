@@ -1,36 +1,35 @@
 <?php
-require_once "utils/common.php";
 
-$uri = getRootURI();
+$request = $_SERVER['REQUEST_URI'];
 
-switch ($_SERVER['REQUEST_URI']) {
+switch ($request) {
 
-    case $uri . '':
-    case  '/time-tracker/':
+    case '':
+    case '/':
         require __DIR__ . '/views/index.php';
         break;
 
-    case $uri . '/projects/list':
+    case '/projects/list':
         require __DIR__ . '/controllers/project_list.php';
         break;
 
-    case $uri . '/tasks/list':
+    case '/tasks/list':
         require __DIR__ . '/controllers/task_list.php';
         break;
 
-    case $uri . '/projects/add':
+    case '/projects/add':
         require __DIR__ . '/controllers/project.php';
         break;
 
-    case $uri . '/tasks/add':
+    case '/tasks/add':
         require __DIR__ . '/controllers/task.php';
         break;
 
-    case $uri . '/reports':
+    case '/reports':
         require __DIR__ . '/controllers/reports.php';
         break;
 
-    case preg_match('/\/projects\/\?id=\d/', $_SERVER['REQUEST_URI']):
+    case (preg_match('/\/projects\/add\?id=\d/', $request) ? true : false):
         require __DIR__ . '/controllers/project.php';
         break;
 
