@@ -15,6 +15,9 @@
 </head>
 
 <body>
+    <?php
+    require "nav.php";
+    ?>
 
     <div class="container-fluid">
         <div class="row">
