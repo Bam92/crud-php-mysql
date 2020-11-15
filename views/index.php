@@ -5,8 +5,6 @@ $taskCount = get_all_tasks_count();
 $projectCount =  get_all_projects_count();
 $title = 'theTrackerApp';
 
-// var_dump($_SERVER['HTTP_HOST']);
-
 ob_start();
 ?>
 <div class="row align-items-center">
